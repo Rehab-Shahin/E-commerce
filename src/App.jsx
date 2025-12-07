@@ -7,7 +7,6 @@ import Register from "./Pages/Register/Register";
 import MainLayout from "./Layout";
 import CartPage from "./Pages/CartPage/CartPage";
 import Wishlist from "./Pages/Wishlist/Wishlist";
-import Checkouts from "./Pages/checkouts/checkouts";
 import Account from "./Pages/Account/Account";
 import Compare from "./Pages/Compare/Compare";
 import About from "./Pages/About/About";
@@ -20,6 +19,7 @@ import SearchModal from "./Components/SearchModal/SearchModal";
 import LoginRequiredModal from "./Components/LoginRequiredModal/LoginRequiredModal";
 import supabase from "./supabase";
 import { useUserData, useCategories } from "./store";
+import Checkouts from "./Pages/checkouts/Checkouts";
 
 export default function App() {
   const { restoreUser, setUser } = useUserData();
