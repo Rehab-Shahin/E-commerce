@@ -1,0 +1,45 @@
+.headerImg1,.headerImg2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.background1 {
+  background-image: url('../../assets/imgs/shopimg1.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.background2 {
+  background-image: url('../../assets/imgs/shopimg2.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+.headerImg1:hover .background1 {
+  transform: scale(1.1);
+}
+.headerImg2:hover .background2 {
+  transform: scale(1.1);
+}
+.label1,.label2 {
+  color: white;
+  font-weight: bold;
+  border-radius: 33px;
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  z-index: 1;
+}
+.label2{
+    width: 150px;
+}
