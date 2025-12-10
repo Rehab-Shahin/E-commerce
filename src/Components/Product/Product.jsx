@@ -12,7 +12,7 @@ export default function Products({ header }) {
         <br />
         way we live, work, and interact with our environment.
       </p>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-7 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-7 gap-10">
         {products.map((el, index) => (
           <ProductCard
             key={index}
