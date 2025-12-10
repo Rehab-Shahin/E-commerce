@@ -54,53 +54,48 @@ export default function NavHeader() {
       </button>
 
       <nav className="hidden md:flex items-center gap-7 ">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#ad985c] text-[1.1rem]"
+              : "text-white text-[1.1rem]"
+          }
+        >
+          Home
+        </NavLink>
 
-  <NavLink
-    to="/"
-    className={({ isActive }) =>
-      isActive
-        ? "text-[#ad985c] text-[1.1rem]"
-        : "text-white text-[1.1rem]"
-    }
-  >
-    Home
-  </NavLink>
+        <NavLink
+          to="/about-Us"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#ad985c] text-[1.1rem]"
+              : "text-white text-[1.1rem]"
+          }
+        >
+          About us
+        </NavLink>
 
-<NavLink
-  to="/about-Us"
-  className={({ isActive }) =>
-    isActive
-      ? "text-[#ad985c] text-[1.1rem]"
-      : "text-white text-[1.1rem]"
-  }
->
-  About us
-</NavLink>
+        <div
+          className="cursor-pointer flex items-center gap-1 relative"
+          onMouseEnter={() => pagesopenModal()}
+        >
+          <span className="text-white text-[1.1rem]">Pages</span>
+          <IoIosArrowDown className="text-white text-[0.8rem] mt-1" />
+          {pagesmodalIndex && <PagesModal />}
+        </div>
 
-
-
-  <div
-    className="cursor-pointer flex items-center gap-1 relative"
-    onMouseEnter={() => pagesopenModal()}
-  >
-    <span className="text-white text-[1.1rem]">Pages</span>
-    <IoIosArrowDown className="text-white text-[0.8rem] mt-1" />
-    {pagesmodalIndex && <PagesModal />}
-  </div>
-
-  <NavLink
-    to="/contact"
-    className={({ isActive }) =>
-      isActive
-        ? "text-[#ad985c] text-[1.1rem]"
-        : "text-white text-[1.1rem]"
-    }
-  >
-    Contact
-  </NavLink>
-
-</nav>
-
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#ad985c] text-[1.1rem]"
+              : "text-white text-[1.1rem]"
+          }
+        >
+          Contact
+        </NavLink>
+      </nav>
 
       <Link to="/" className="absolute left-1/2 -translate-x-1/2">
         <img
@@ -180,68 +175,34 @@ export default function NavHeader() {
 
         <div>
           <button
+            className="flex justify-between items-center w-full text-black text-lg py-2"
+          >
+            <NavLink to="/" onClick={() => handleNavigate("/home")}
+               className=
+              {({ isActive }) =>
+                isActive
+                  ? "text-[#ba9d4d] text-[1.1rem]"
+                  : " text-[1.1rem]"
+              }>
+                Home
+            </NavLink>
+          </button>
+        </div>
+        <div>
+          <button
             onClick={() => toggleDropdown("home")}
             className="flex justify-between items-center w-full text-black text-lg py-2"
           >
-            Home <IoIosArrowDown />
+            <NavLink to="/about-Us" onClick={() => handleNavigate("/about-Us")}
+               className=
+              {({ isActive }) =>
+                isActive
+                  ? "text-[#ba9d4d] text-[1.1rem]"
+                  : " text-[1.1rem]"
+              }>
+                About us
+            </NavLink>
           </button>
-          {openDropdown === "home" && (
-            <div className="pl-5 flex flex-col gap-2 mt-2 text-black">
-              <Link to="/" onClick={() => handleNavigate("/home1")}>
-                Home 1
-              </Link>
-              <Link to="/" onClick={() => handleNavigate("/home2")}>
-                Home 2
-              </Link>
-              <Link to="/" onClick={() => handleNavigate("/home3")}>
-                Home 3
-              </Link>
-            </div>
-          )}
-        </div>
-
-        <div>
-          <button
-            onClick={() => toggleDropdown("shops")}
-            className="flex justify-between items-center w-full text-black text-lg py-2"
-          >
-            Shops <IoIosArrowDown />
-          </button>
-          {openDropdown === "shops" && (
-            <div className="pl-5 flex flex-col gap-2 mt-2 text-black">
-              <Link
-                to="/shop-default"
-                onClick={() => handleNavigate("/shop-default")}
-              >
-                Shop Default
-              </Link>
-              <Link
-                to="/shop-left"
-                onClick={() => handleNavigate("/shop-left")}
-              >
-                Shop Left Sidebar
-              </Link>
-            </div>
-          )}
-        </div>
-
-        <div>
-          <button
-            onClick={() => toggleDropdown("products")}
-            className="flex justify-between items-center w-full text-black text-lg py-2"
-          >
-            Products <IoIosArrowDown />
-          </button>
-          {openDropdown === "products" && (
-            <div className="pl-5 flex flex-col gap-2 mt-2 text-black">
-              <Link to="/product1" onClick={() => handleNavigate("/product1")}>
-                Product Style 01
-              </Link>
-              <Link to="/product2" onClick={() => handleNavigate("/product2")}>
-                Product Style 02
-              </Link>
-            </div>
-          )}
         </div>
 
         <div>
@@ -253,22 +214,36 @@ export default function NavHeader() {
           </button>
           {openDropdown === "pages" && (
             <div className="pl-5 flex flex-col gap-2 mt-2 text-black">
-              <Link to="/about" onClick={() => handleNavigate("/about")}>
-                About Us
-              </Link>
-              <Link to="/privacy" onClick={() => handleNavigate("/privacy")}>
-                Privacy Policy
-              </Link>
+              <NavLink to="/about-Us" onClick={() => handleNavigate("/about-Us")}
+               className=
+              {({ isActive }) =>
+                isActive
+                  ? "text-[#ba9d4d] text-[1.1rem]"
+                  : " text-[1.1rem]"
+              }>
+                About us
+            </NavLink>
+              <NavLink to="/" onClick={() => handleNavigate("/")}
+               className=
+              {({ isActive }) =>
+                isActive
+                  ? "text-[#ba9d4d] text-[1.1rem]"
+                  : " text-[1.1rem]"
+              }>
+                 Privacy Policy
+            </NavLink>
             </div>
           )}
         </div>
-        <Link
-          to="/contact"
-          onClick={() => handleNavigate("/contact")}
-          className="block text-lg py-2"
-        >
-          Contact
-        </Link>
+        <NavLink to="/contact" onClick={() => handleNavigate("/contact")}
+               className=
+              {({ isActive }) =>
+                isActive
+                  ? "text-[#ba9d4d] text-[1.1rem]"
+                  : " text-[1.1rem]"
+              }>
+                Contact
+            </NavLink>
 
         <div
           onClick={() => {
