@@ -6,8 +6,8 @@ export default function Products({ header }) {
 
   return (
     <div className="flex flex-col gap-5 px-3 md:px-16 lg:px-20 my-[160px]">
-      <h1 className="text-5xl font-bold">{header}</h1>
-      <p className="text-[20px] m-0 text-gray-600">
+      <h1 className="text-xl md:text-5xl font-bold">{header}</h1>
+      <p className="text-[10px] md:text-[20px] m-0 text-gray-600">
         Electronics products continue to drive innovation and shape the
         <br />
         way we live, work, and interact with our environment.
